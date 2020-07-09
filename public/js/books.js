@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Handle selected book
     const overlay = document.querySelector('.overlay');
     const cards = document.querySelectorAll('.card');
     let selectedCard;
@@ -23,4 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === "Escape")
             rmCurrentCard();
     })
+
+
+    // make header fixed when scroll down
+    const header = document.querySelector('header');
+    document.addEventListener('scroll', () => {
+        if (window.pageYOffset > window.outerHeight / 2)
+            header.style.position = 'fixed';
+        else
+            header.style.position = 'static';
+    });
 });
