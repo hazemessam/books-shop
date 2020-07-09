@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title books
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/books.css")
+        link(rel="stylesheet", href="/css/loading.css")
+        script(src="/js/loading.js")
+        script(src="/js/books.js")
+        link(rel="icon", href="/img/icon.png")
+    body
+        div.overlay
+        header
+            h1.logo My Shop
+            nav
+                ul
+                    li
+                        a(href="/") Shop
+                    li
+                        a.active(href="/books") books
+                    li
+                        a(href="/admin/add-book") Add book
+        main
+            .loader
+                .lds-ripple
+                    div
+                    div
+            if books.length > 0
+                each book in books
+                    article.card
+                        h2 #{book.name}
+                        //- img(src="https://m.media-amazon.com/images/I/612BoySj-RL._AC_UY327_FMwebp_QL65_.jpg", alt="book")
+                        img(src="https://m.media-amazon.com/images/I/71jRvBEDNmL._AC_UY327_FMwebp_QL65_.jpg", alt="book")
+                        h3 #{book.price}$
+        

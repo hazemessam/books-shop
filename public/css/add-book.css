@@ -1,0 +1,45 @@
+:root {
+    --main-color: dodgerblue;
+}
+
+form {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #aaa;
+}
+
+input {
+    box-sizing: border-box;
+    width:  calc(100% - 20px);
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+    padding: 7px 7px;
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--main-color);
+}
+
+input[type="submit"] {
+    width: fit-content;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    border-radius: 3px;
+    color: #fff;
+    padding: 7px 15px;
+    margin: 0;
+    cursor: pointer;
+    /* transition: .1s ease-in-out; */
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+    color: var(--main-color);
+}

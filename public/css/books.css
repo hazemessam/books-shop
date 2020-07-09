@@ -1,0 +1,66 @@
+:root {
+    --main-color: dodgerblue;
+}
+
+main {
+    padding: 10px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.card {
+    box-sizing: border-box;
+    --cards : 5;
+    width: calc((100% - var(--cards) * 20px) / var(--cards));
+    background-color: #fff;
+    border: 1px solid var(--main-color);
+    margin: 10px;
+    float: left;
+    box-shadow: 0 0 10px #aaa;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.card.active {
+    float: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5, 1.5);
+    z-index: 2;
+    cursor: default;
+}
+
+.card h2,
+.card h3 {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .8;
+    z-index: 1;
+    display: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.overlay.active {
+    display: block;
+}
