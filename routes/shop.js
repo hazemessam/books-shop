@@ -1,18 +1,17 @@
 // Node modules
 const express = require('express');
 // App modules
-const adminData = require('./admin');
+const {books} = require('./admin');
 
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('shop');
+    res.render('shop', {path: '/'});
 });
 
 router.get('/books', (req, res) => {
-    const books = adminData.books;
-    res.render('books', {books});
+    res.render('books', {path: '/books', books});
 });
 
 module.exports = router;

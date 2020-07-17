@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/add-book.css">
+    <link rel="icon" href="/img/icon.png">
+</head>
+<body>
+    <%- include('./includes/header.ejs') %> 
+    <main class="center">
+        <form action="/admin/add-book" method="POST">
+            <input type="text" name="name" placeholder="Nmae" autocomplete="">
+            <input type="number" name="price" placeholder="Price">
+            <input type="submit" value="Add">
+        </form>
+    </main>
+</body>
+</html>

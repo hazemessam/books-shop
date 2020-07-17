@@ -2,13 +2,13 @@
 const express = require('express');
 
 // App modules
-const adminData = require('./routes/admin');
+const {adminRoutes} = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 
 const app = express();
 
-app.set('view engine', 'pug');  // Set the templete engine
+app.set('view engine', 'ejs');  // Set the templete engine
 app.set('views','./views');  // Set the views folder
 
 app.use(express.static('./public'));  // Set the static files path
@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/admin', adminData.routes);  // Handle admin routs
+app.use('/admin', adminRoutes);  // Handle admin routs
 app.use(shopRoutes);  // Handle shop routs
 
 // Handle test route

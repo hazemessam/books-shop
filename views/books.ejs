@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/books.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <script src="/js/loading.js"></script>
+    <script src="/js/books.js"></script>
+    <link rel="icon" href="/img/icon.png">
+</head>
+<body>
+    <div class="overlay"></div>
+    <%- include('./includes/header.ejs') %> 
+    <main>
+        <div class="loader">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <% if (books.length > 0) { %> 
+            <% for (let book of books) { %>
+                <article class="card">
+                    <h2><%= book.name %></h2>
+                    <img src="https://m.media-amazon.com/images/I/71jRvBEDNmL._AC_UY327_FMwebp_QL65_.jpg" alt="book">
+                    <h3><%= book.price %></h3>
+                </article>
+            <% } %> 
+        <% } else { %>
+            <h1 style="padding-top: 260px">No books!</h1>
+        <% } %> 
+
+    </main>
+</body>
+</html>
