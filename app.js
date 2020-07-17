@@ -33,4 +33,7 @@ app.use((req, res) => {
     res.status(404).render('404');
 });
 
-app.listen(3000);
+const port = 8080;
+app.listen(port, (req, res) => {
+    console.log(`Start listening to port ${port}...`);
+});
