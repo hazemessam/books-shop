@@ -1,20 +1,11 @@
 const express = require('express');
+const booksController = require('../controllers/books');
 
-
-const books = []
 
 const router = express.Router();
 
-router.get('/add-book', (req, res) => {
-    res.render('add-book', {path: '/admin/add-book'});
-});
+router.get('/add-book', booksController.getAddBook);
 
-router.post('/add-book', (req, res) => {
-    books.push(req.body);
-    res.redirect('/books');
-});
+router.post('/add-book', booksController.postAddBook);
 
-module.exports = {
-    adminRoutes: router,
-    books
-};
+module.exports = router

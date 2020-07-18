@@ -2,15 +2,15 @@
 const express = require('express');
 
 // App modules
-const {adminRoutes} = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+const errorsController =require('./controllers/errors');
 
 
 const app = express();
 
 app.set('view engine', 'ejs');  // Set the templete engine
 app.set('views','./views');  // Set the views folder
-
 app.use(express.static('./public'));  // Set the static files path
 app.use(express.urlencoded({'extended': false}));  // Parse the req body
 
@@ -29,9 +29,7 @@ app.get('/test', (req, res) => {
 });
 
 // Handle not found routs
-app.use((req, res) => {
-    res.status(404).render('404');
-});
+app.use(errorsController.get404);
 
 const port = 8080;
 app.listen(port, (req, res) => {
