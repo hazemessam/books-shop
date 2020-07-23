@@ -11,25 +11,20 @@ class Book {
     }
 
     save() {
-        fs.readFile(booksPath, (err, fileContent) => {
-            let books = [];
-            if (!err) {
-                books = JSON.parse(fileContent);
-            }
-            books.push(this);
-            fs.writeFile(booksPath, JSON.stringify(books), (err) => {
-                console.log(err);
-            });
-        });
+        let booksData = fs.readFileSync(booksPath).toString();
+        let books = [];
+        if (booksData.length > 0)
+            books = JSON.parse(booksData);
+        books.push(this);
+        fs.writeFileSync(booksPath, JSON.stringify(books));
     }
 
     static getAll() {
-        fs.readFile(booksPath, (err, fileContent) => {
-            if (err) {
-                return [];
-            }
-            return JSON.parse(fileContent);
-        });
+        const booksData = fs.readFileSync(booksPath).toString();
+        let books = [];
+        if (booksData.length > 0)
+            books = JSON.parse(booksData);
+        return books;
     }
 }
 

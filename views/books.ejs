@@ -25,8 +25,10 @@
             <% for (let book of books) { %>
                 <article class="card">
                     <h2><%= book.name %></h2>
-                    <img src="https://m.media-amazon.com/images/I/71jRvBEDNmL._AC_UY327_FMwebp_QL65_.jpg" alt="book">
-                    <h3><%= book.price %></h3>
+                    <div class="img-holder">
+                        <img src="https://m.media-amazon.com/images/I/71jRvBEDNmL._AC_UY327_FMwebp_QL65_.jpg" alt="book">
+                    </div>
+                    <h3><%= book.price %>$</h3>
                 </article>
             <% } %> 
         <% } else { %>

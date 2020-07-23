@@ -14,17 +14,14 @@ main {
     width: 20%;
     /* --cards : 5; */
     /* width: calc((100% - var(--cards) * 20px) / var(--cards)); */
+    /* float: left; */
     background-color: #fff;
     border: 1px solid var(--main-color);
     margin: 10px;
-    /* float: left; */
     box-shadow: 0 0 10px #aaa;
     cursor: pointer;
     transition: .3s;
-}
-
-.card:hover {
-    box-shadow: 0 0 10px var(--main-color);
+    /* overflow: hidden; */
 }
 
 .card.active {
@@ -37,10 +34,27 @@ main {
     cursor: default;
 }
 
+.card:hover {
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.card.active:hover img {
+    transform: none;
+}
+
 .card h2,
 .card h3 {
     text-align: center;
     padding: 5px 0;
+}
+
+.card .img-holder {
+    overflow: hidden;
 }
 
 .card img {

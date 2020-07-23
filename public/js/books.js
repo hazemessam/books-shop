@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // make header fixed when scroll down
-    const header = document.querySelector('header');
-    document.addEventListener('scroll', () => {
-        if (window.pageYOffset > window.outerHeight / 2)
-            header.style.position = 'fixed';
-        else
-            header.style.position = 'static';
-    });
+    // const header = document.querySelector('header');
+    // document.addEventListener('scroll', () => {
+    //     if (window.pageYOffset > window.outerHeight / 2)
+    //         header.style.position = 'fixed';
+    //     else
+    //         header.style.position = 'static';
+    // });
 });
