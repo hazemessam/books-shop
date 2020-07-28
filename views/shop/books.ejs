@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/books.css">
+    <script src="/js/loading.js"></script>
+    <script src="/js/books.js"></script>
+    <link rel="icon" href="/img/icon.png">
+</head>
+<body>
+    <div class="overlay"></div>
+    <%- include('../includes/header.ejs') %> 
+    <main>
+        <div class="loader">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <% if (books.length > 0) { %> 
+            <% for (let book of books) { %>
+                <article class="card">
+                    <h2><%= book.name %></h2>
+                    <div class="img-holder">
+                        <img src="https://m.media-amazon.com/images/I/71jRvBEDNmL._AC_UY327_FMwebp_QL65_.jpg" alt="book">
+                    </div>
+                    <h3><%= book.price %>$</h3>
+                </article>
+            <% } %> 
+        <% } else { %>
+            <h1 style="padding-top: 260px">No books!</h1>
+        <% } %> 
+    </main>
+    <a href="#main-header" class="to-top" style="text-decoration: none;"><span>&#x21ea;</span></a>
+    <!-- <a href="#main-header" class="to-top"><i class="fas fa-arrow-circle-up"></i></a> -->
+    <!-- <script src="https://kit.fontawesome.com/e9bc778ee1.js" crossorigin="anonymous"></script> -->
+</body>
+</html>

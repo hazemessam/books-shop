@@ -4,6 +4,14 @@ const path = require('path')
 
 const booksPath = path.join(__dirname, '../Data/books.json');
 
+const getBooks = () => {
+    let booksData = fs.readFileSync(booksPath).toString();
+    let books = [];
+    if (booksData.length > 0)
+        books = JSON.parse(booksData);
+    return books;
+}
+
 class Book {
     constructor(name, price) {
         this.name = name;
@@ -11,19 +19,13 @@ class Book {
     }
 
     save() {
-        let booksData = fs.readFileSync(booksPath).toString();
-        let books = [];
-        if (booksData.length > 0)
-            books = JSON.parse(booksData);
+        const books = getBooks();
         books.push(this);
         fs.writeFileSync(booksPath, JSON.stringify(books));
     }
 
     static getAll() {
-        const booksData = fs.readFileSync(booksPath).toString();
-        let books = [];
-        if (booksData.length > 0)
-            books = JSON.parse(booksData);
+        const books = getBooks();
         return books;
     }
 }

@@ -1,4 +1,4 @@
-<header>
+<header id="main-header">
     <h1 class="logo">Books Shop</h1>
     <nav>
         <ul>
@@ -7,7 +7,10 @@
             </li>
             <li>
                 <a href="/books" class="<%= path == '/books' ? 'active' : '' %>">Books</a>
-            </li>
+            </li>   
+            <li>
+                <a href="/cart" class="<%= path == '/cart' ? 'active' : '' %>">Cart</a>
+            </li>   
             <li>
                 <a href="/admin/add-book" class="<%= path == '/admin/add-book' ? 'active' : '' %>">Add book</a>
             </li>

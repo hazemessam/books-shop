@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="overlay"></div>
-    <%- include('./includes/header.ejs') %> 
+    <%- include('../includes/header.ejs') %> 
     <main>
         <div class="loader">
             <div class="lds-ripple">
@@ -34,7 +34,8 @@
         <% } else { %>
             <h1 style="padding-top: 260px">No books!</h1>
         <% } %> 
-
     </main>
+    <a href="#main-header" class="to-top"><i class="fas fa-arrow-circle-up"></i></a>
+    <script src="https://kit.fontawesome.com/e9bc778ee1.js" crossorigin="anonymous"></script>
 </body>
 </html>
