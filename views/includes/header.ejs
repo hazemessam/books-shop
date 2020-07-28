@@ -2,18 +2,15 @@
     <h1 class="logo">Books Shop</h1>
     <nav>
         <ul>
-            <li>
-                <a href="/" class="<%= path == '/' ? 'active' : '' %>">Shop</a>
-            </li>
-            <li>
-                <a href="/books" class="<%= path == '/books' ? 'active' : '' %>">Books</a>
-            </li>   
-            <li>
-                <a href="/cart" class="<%= path == '/cart' ? 'active' : '' %>">Cart</a>
-            </li>   
-            <li>
-                <a href="/admin/add-book" class="<%= path == '/admin/add-book' ? 'active' : '' %>">Add book</a>
-            </li>
+            <% if (isAdmin) { %> 
+                <li><a href="/admin" class="<%= path == '/admin' ? 'active' : '' %>">Shop</a></li>
+                <li><a href="/admin/books" class="<%= path == '/admin/books' ? 'active' : '' %>">Books</a></li>
+                <li><a href="/admin/add-book" class="<%= path == '/admin/add-book' ? 'active' : '' %>">Add book</a></li>
+            <% } else { %>
+                <li><a href="/" class="<%= path == '/' ? 'active' : '' %>">Shop</a></li>
+                <li><a href="/books" class="<%= path == '/books' ? 'active' : '' %>">Books</a></li>   
+                <li><a href="/cart" class="<%= path == '/cart' ? 'active' : '' %>">Cart</a></li>   
+            <% } %> 
         </ul>
     </nav>
 </header>
