@@ -26,17 +26,19 @@
                 <article class="card">
                     <h2><%= book.name %></h2>
                     <div class="img-holder">
-                        <img src="https://m.media-amazon.com/images/I/71jRvBEDNmL._AC_UY327_FMwebp_QL65_.jpg" alt="book">
+                        <img src="<%= book.imgUrl %> " alt="book">
                     </div>
                     <h3><%= book.price %>$</h3>
+                    <div class="btns">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
                 </article>
             <% } %> 
         <% } else { %>
             <h1 style="padding-top: 260px">No books!</h1>
         <% } %> 
     </main>
-    <a href="#main-header" class="to-top" style="text-decoration: none;"><span>&#x21ea;</span></a>
-    <!-- <a href="#main-header" class="to-top"><i class="fas fa-arrow-circle-up"></i></a> -->
-    <!-- <script src="https://kit.fontawesome.com/e9bc778ee1.js" crossorigin="anonymous"></script> -->
+    <button class="to-top" onclick="goToTop()" ><span>&#x21ea;</span></button>
 </body>
 </html>

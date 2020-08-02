@@ -12,9 +12,23 @@
     <%- include('../includes/header.ejs') %> 
     <main class="center">
         <form action="/admin/add-book" method="POST">
-            <input type="text" name="name" placeholder="Nmae" autocomplete="">
-            <input type="number" name="price" placeholder="Price">
-            <input type="submit" value="Add">
+            <div class="inp-holder">
+                <input type="text" name="name" placeholder="Name" autocomplete="">
+                <span></span>
+            </div>
+            <div class="inp-holder">
+                <input type="url" name="imgUrl" placeholder="Img URL">
+                <span></span>
+            </div>
+            <div class="inp-holder">
+                <textarea name="describtion" rows="4" placeholder="Describtion"></textarea>
+                <span></span>
+            </div>
+            <div class="inp-holder">
+                <input type="number" name="price" placeholder="Price">
+                <span></span>
+            </div>
+                <input type="submit" value="Add">
         </form>
     </main>
 </body>

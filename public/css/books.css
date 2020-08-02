@@ -18,6 +18,7 @@ main {
     background-color: #fff;
     border: 1px solid var(--main-color);
     margin: 10px;
+    padding: 10px 0;
     box-shadow: 0 0 10px #aaa;
     cursor: pointer;
     transition: .3s;
@@ -63,6 +64,29 @@ main {
     height: auto;
 }
 
+.card .btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card button {
+    color: var(--main-color);
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.card button:hover {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
 .overlay {
     position: fixed;
     width: 100vw;
@@ -89,8 +113,11 @@ main {
     color: #fff;
     background-color: dodgerblue;
     border-radius: 50%;
+    border-color: transparent;
     box-shadow: 0 0 10px #aaa;
     transition: .3s;
+    outline: none;
+    cursor: pointer;
 }
 
 .to-top span {

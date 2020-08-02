@@ -1,5 +1,6 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const { timeStamp } = require('console');
 
 
 const booksPath = path.join(__dirname, '../Data/books.json');
@@ -13,8 +14,10 @@ const getBooks = () => {
 }
 
 class Book {
-    constructor(name, price) {
+    constructor(name, imgUrl, describtion, price) {
         this.name = name;
+        this.imgUrl = imgUrl;
+        this.describtion = describtion;
         this.price = price;
     }
 

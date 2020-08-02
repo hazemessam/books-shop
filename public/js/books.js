@@ -1,14 +1,22 @@
+// Go to top
+const goToTop = () => window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle selected book
+    // Global variables
     const overlay = document.querySelector('.overlay');
     const cards = document.querySelectorAll('.card');
+    const header = document.querySelector('header');
+    const body = document.querySelector('body');
     let selectedCard;
     
+
+    // Remove current active card 
     const rmCurrentCard = () => {
         overlay.classList.remove('active');
         selectedCard.remove();
     }
 
+    // Add active card
     for (let card of cards) {
         card.addEventListener('click', () => {
             overlay.classList.add('active');
@@ -18,20 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // Close active card when overlay is clicked
     overlay.addEventListener('click', rmCurrentCard);
 
+    // Close active card when Esc is clicked
     document.addEventListener('keydown', (e) => {
         if (e.key === "Escape")
             rmCurrentCard();
     })
 
-
-    // make header fixed when scroll down
-    // const header = document.querySelector('header');
-    // document.addEventListener('scroll', () => {
-    //     if (window.pageYOffset > window.outerHeight / 2)
-    //         header.style.position = 'fixed';
-    //     else
-    //         header.style.position = 'static';
-    // });
+    // Make Header fixed
+    header.style.position = 'fixed';
+    header.style.top = '0';
+    body.style.paddingTop = `${header.offsetHeight}px`;
 });

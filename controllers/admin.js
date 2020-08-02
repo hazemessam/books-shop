@@ -28,7 +28,11 @@ exports.getAddBook = (req, res) => {
 
 // POST /admin/add-book
 exports.postAddBook = (req, res) => {
-    const book = new Book(req.body.name, req.body.price);
+    const name = req.body.name;
+    const imgUrl = req.body.imgUrl;
+    const describtion = req.body.describtion;
+    const price = req.body.price;
+    const book = new Book(name, imgUrl, describtion, price);
     book.save();
     res.redirect('/admin/books');
 }
