@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const { timeStamp } = require('console');
 
 
-const booksPath = path.join(__dirname, '../Data/books.json');
+const booksPath = path.join(__dirname, '../data/books.json');
 
 const getBooks = () => {
     let booksData = fs.readFileSync(booksPath).toString();
