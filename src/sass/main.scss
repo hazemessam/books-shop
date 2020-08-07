@@ -1,0 +1,88 @@
+$main-color: dodgerblue;
+
+::-webkit-scrollbar {
+    width: 5px;
+    
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+    border-radius: 50px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    body {
+        color: $main-color;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        
+        header {
+            width: 100%;
+            background-color: $main-color;
+            display: flex;
+            justify-content: space-between;
+            transition: .3s;
+
+            .logo {
+                font-family: cursive;
+                padding-left: 10px;
+                padding-bottom: 10px;
+                color: #fff;
+                user-select: none;
+            }
+            
+            nav {
+                ul {
+                    list-style: none;
+                    display: flex;
+                    height: 100%;
+                    
+                    li {
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                            padding: 0 10px;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            transition: .3s;
+
+                            &:hover, 
+                            &.active {
+                                background-color: #fff;
+                                color: $main-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            &.center {
+                width: 40%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+    
+                > h1 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+}

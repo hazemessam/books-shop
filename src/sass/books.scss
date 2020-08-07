@@ -1,0 +1,126 @@
+$main-color: dodgerblue;
+
+main {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+        box-sizing: border-box;
+        width: 20%;
+        background-color: #fff;
+        border: 1px solid $main-color;
+        margin: 10px;
+        padding: 10px 0;
+        box-shadow: 0 0 10px #aaa;
+        cursor: pointer;
+        transition: .3s;
+        
+        &:hover {
+            box-shadow: 0 0 10px $main-color;
+            
+            img {
+                transform: scale(1.1);
+                transition: .4s;
+            }
+        }
+        
+        &.active {
+            float: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5, 1.2);
+            z-index: 2;
+            cursor: default;
+            
+            &:hover {
+                img {
+                    transform: none;
+                }
+            }
+        }
+    
+        h2, h3 {
+            text-align: center;
+            padding: 5px 0;
+        }
+    
+        .img-holder {
+            overflow: hidden;
+    
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;        
+            }
+        }
+    
+        .btns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;      
+            
+            button {
+                color: $main-color;
+                font-weight: bold;
+                background-color: transparent;
+                border: 2px solid $main-color;
+                border-radius: 4px;
+                padding: 5px 10px;
+                margin: 5px;
+                transition: .3s;
+                cursor: pointer;
+    
+                &:hover {
+                    color: #fff;
+                    background-color: var(--main-color);                
+                }
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .8;
+    z-index: 1;
+    display: none;
+    transition: .3s;
+    cursor: pointer;
+
+    &.active {
+        display: block;    
+    }
+}
+
+.to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    font-size: 2em;
+    color: #fff;
+    background-color: $main-color;
+    border-radius: 50%;
+    border-color: transparent;
+    box-shadow: 0 0 10px #aaa;
+    transition: .3s;
+    outline: none;
+    cursor: pointer;
+    
+    span {
+        padding: 20px 10px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: $main-color;
+        box-shadow: 0 0 10px $main-color;    
+    }
+}
