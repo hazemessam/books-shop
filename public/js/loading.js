@@ -1,4 +1,1 @@
-window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
-    loader.style.display = 'none';
-});
+window.addEventListener("load",()=>{document.querySelector(".loader").style.display="none"});
