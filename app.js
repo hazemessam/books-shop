@@ -22,14 +22,7 @@ app.use((req, res, next) => {
 
 app.use('/admin', adminRoutes);  // Handle admin routs
 app.use(shopRoutes);  // Handle shop routs
-
-// Handle test route
-app.get('/test', (req, res) => {
-    res.send(`<h2 style="font-family: arial; text-align: center; padding-top: 200px">Welcome to test page</h2>`);
-});
-
-// Handle not found routs
-app.use(errorsController.get404);
+app.use(errorsController.get404);  // Handle not found routs
 
 const port = 8080;
 app.listen(port, (req, res) => {
