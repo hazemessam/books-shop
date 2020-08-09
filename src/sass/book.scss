@@ -1,0 +1,59 @@
+$main-color: dodgerblue;
+
+main {
+    color: #111;
+    // height: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        margin: 15px;
+        overflow: hidden;
+        border-bottom: 2px solid $main-color;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #aaa;
+
+
+        img {
+            width: 50%;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+
+            hr {
+                margin: 15px 0;
+            }
+
+            span {
+                font-size: 16pt;
+                font-weight: bold;
+            }
+
+            .actions {
+                display: flex;
+                flex-direction: row;
+
+                button {
+                    background-color: $main-color;
+                    color: #fff;
+                    border: 2px solid $main-color;
+                    padding: 10px 15px;
+                    border-radius: 4px;
+                    transition: .4s;
+                    cursor: pointer;
+                    outline: none;
+                    font-size: 14pt;
+                    box-shadow: 0 0 10px #aaa;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}

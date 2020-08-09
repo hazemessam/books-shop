@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= book.name %> </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/book.css">
+</head>
+<body>
+    <%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container">
+            <img src="<%= book.imgUrl %> " alt="book">
+            <div class="details">
+                <h1 class="name"><%= book.name %> </h1>
+                <hr>
+                <p>
+                    <span>Describtion:-</span>
+                    <br>
+                    <%= book.describtion %>
+                </p>
+                <hr>
+                <h2 class="price">
+                    <span>Price: </span><%= book.price %>$
+                </h2>
+                <hr>
+                <div class="actions">
+                    <button>Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/main.min.js"></script>
+</body>
+</html>

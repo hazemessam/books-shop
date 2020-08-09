@@ -21,6 +21,7 @@ class Book {
     }
 
     save() {
+        this.id = Math.random().toString();
         const books = getBooks();
         books.push(this);
         fs.writeFileSync(booksPath, JSON.stringify(books));
@@ -29,6 +30,14 @@ class Book {
     static getAll() {
         const books = getBooks();
         return books;
+    }
+
+    static findBook(bookId) {
+        const books = getBooks();
+        for (let book of books)
+            if (book.id === bookId)
+                return book;
+        return null;
     }
 }
 

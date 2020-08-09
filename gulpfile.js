@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const autoPrefixer = require('gulp-autoprefixer');
 const imageMin = require('gulp-imagemin');
 const terser = require('gulp-terser');
+const concat = require('gulp-concat');
 
 
 const cssPath = 'src/sass/**/*.scss';
@@ -25,6 +26,7 @@ const imgTask = () => {
 
 const jsTask = () => {
     return gulp.src(jsPath)
+        .pipe(concat('main.min.js'))
         .pipe(terser())
         .pipe(gulp.dest('public/js'))
 }

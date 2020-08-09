@@ -13,8 +13,19 @@ exports.getIndex = (req, res) => {
 exports.getBooks = (req, res) => {    
     res.render('shop/books', {
         path: '/books',
-        books: Book.getAll(),
-        isAdmin: false
+        isAdmin: false,
+        books: Book.getAll()
+    });
+}
+
+// GET /books/:id
+exports.getBook = (req, res) => {
+    const bookId = req.params.id;
+    const book = Book.findBook(bookId);
+    res.render('shop/book', {
+        path: `/books/${bookId}`,
+        isAdmin: false,
+        book
     });
 }
 

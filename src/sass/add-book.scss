@@ -12,9 +12,10 @@ main {
         form {
             box-sizing: border-box;
             width: 100%;
-            border: 1px solid $main-color;
+            // border: 1px solid $main-color;
+            border-bottom: 2px solid $main-color;
             border-radius: 4px;
-            padding: 10px 20px;
+            padding: 20px 20px;
             text-align: center;
             box-shadow: 0 0 10px #aaa;
 
@@ -35,13 +36,10 @@ main {
                     color: $main-color;
                     outline: none;
                     font-size: 12pt;
-
-
                 }
 
                 span {
                     display: block;
-                    content: '';
                     position: absolute;
                     bottom: 0;
                     left: 0;

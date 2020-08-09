@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/loading.css">
     <link rel="stylesheet" href="/css/books.css">
-    <script src="/js/loading.js"></script>
-    <script src="/js/books.js"></script>
     <link rel="icon" href="/img/icon.png">
 </head>
 <body>
@@ -26,10 +24,11 @@
                 <article class="card">
                     <h2><%= book.name %></h2>
                     <div class="img-holder">
-                        <img src="<%= book.imgUrl %> " alt="book">
+                        <img src="<%= book.imgUrl %>" loading="lazy" alt="book">
                     </div>
                     <h3><%= book.price %>$</h3>
-                    <div class="btns">
+                    <div class="actions">
+                        <a href="/books/<%= book.id %>">Details</a>
                         <button class="add-to-cart">Add to cart</button>
                     </div>
                 </article>
@@ -39,5 +38,6 @@
         <% } %> 
     </main>
     <button class="to-top" onclick="goToTop()" ><span>&#x21ea;</span></button>
+    <script src="/js/main.min.js"></script>
 </body>
 </html>
