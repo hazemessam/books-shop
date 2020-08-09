@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "watch": "gulp",
-    "start-all": "npm-run-all -p start watch"
+    "dev": "npm-run-all -p start watch"
   },
   "author": "Hazem E. Saleh",
   "license": "ISC",

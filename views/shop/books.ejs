@@ -29,7 +29,7 @@
                     <h3><%= book.price %>$</h3>
                     <div class="actions">
                         <a href="/books/<%= book.id %>">Details</a>
-                        <button class="add-to-cart">Add to cart</button>
+                        <button class="add-to-cart" id="<%= book.id %>">Add to cart</button>
                     </div>
                 </article>
             <% } %> 

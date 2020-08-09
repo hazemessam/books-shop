@@ -1,4 +1,6 @@
 $main-color: dodgerblue;
+$danger-color: #f00;
+$good-color: #4CAF50;
 
 main {
     color: #111;
@@ -56,11 +58,21 @@ main {
                     }
 
                     &.delete {
-                        background-color: #f00;
-                        border-color: #f00;
+                        background-color: $danger-color;
+                        border-color: $danger-color;
 
                         &:hover {
-                            color: #f00;
+                            color: $danger-color;
+                            background-color: transparent;
+                        }
+                    }
+                    
+                    &.add-to-cart {
+                        background-color: $good-color;
+                        border-color: $good-color;
+                        
+                        &:hover {
+                            color: $good-color;
                             background-color: transparent;
                         }
                     }

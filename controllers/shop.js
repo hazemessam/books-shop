@@ -29,7 +29,7 @@ exports.getBook = (req, res) => {
         })
     }
     else {
-        res.render('admin/book', {
+        res.render('shop/book', {
             path: `/admin/${bookId}`,
             isAdmin: true,
             book
