@@ -88,6 +88,19 @@ html {
                 }
             }
         }
+
+        footer {
+            color: #fff;
+            background-color: $main-color;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 0 10px #aaa;
+
+            span {
+                color: #f00;
+                font-size: 13pt;
+            }
+        }
     }
 
 }

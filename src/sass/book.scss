@@ -36,21 +36,33 @@ main {
                 display: flex;
                 flex-direction: row;
 
-                button {
+                button, a {
                     background-color: $main-color;
                     color: #fff;
                     border: 2px solid $main-color;
                     padding: 10px 15px;
+                    margin-right: 10px;
                     border-radius: 4px;
                     transition: .4s;
                     cursor: pointer;
                     outline: none;
                     font-size: 14pt;
                     box-shadow: 0 0 10px #aaa;
-
+                    text-decoration: none;
+                    
                     &:hover {
                         background-color: transparent;
                         color: $main-color;
+                    }
+
+                    &.delete {
+                        background-color: #f00;
+                        border-color: #f00;
+
+                        &:hover {
+                            color: #f00;
+                            background-color: transparent;
+                        }
                     }
                 }
             }

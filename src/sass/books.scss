@@ -16,7 +16,6 @@ main {
         box-shadow: 0 0 10px #aaa;
         transition: .3s;
         text-decoration: none;
-        color: $main-color;
         overflow: hidden;
         
         &:hover {
@@ -31,6 +30,7 @@ main {
         h2, h3 {
             text-align: center;
             padding: 5px 0;
+            color: #111;
         }
     
         .img-holder {
@@ -64,6 +64,16 @@ main {
                 &:hover {
                     color: #fff;
                     background-color: var(--main-color);                
+                }
+
+                &.delete {
+                    color: #f00;
+                    border-color: #f00;
+                    
+                    &:hover {
+                        color: #fff;
+                        background-color: #f00;
+                    }
                 }
             }
         }

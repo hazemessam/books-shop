@@ -29,8 +29,8 @@
                     <h3><%= book.price %>$</h3>
                     <div class="actions">
                         <a href="/admin/books/<%= book.id %>">Details</a>
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
+                        <button class="edit" id="<%= book.id %>">Edit</button>
+                        <button class="delete" id="<%= book.id %>">Delete</button>
                     </div>
                 </article>
             <% } %> 
@@ -38,6 +38,7 @@
             <h1 style="padding-top: 260px">No books!</h1>
         <% } %> 
     </main>
+    <footer>Made with <span>&#10084;</span> by Hazem Essam.</footer>
     <button class="to-top" onclick="goToTop()" ><span>&#x21ea;</span></button>
     <script src="/js/main.min.js"></script>
 </body>

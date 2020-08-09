@@ -13,8 +13,8 @@ exports.getIndex = (req, res) => {
 exports.getBooks = (req, res) => {
     res.render('admin/books', {
         path: '/admin/books',
-        books: Book.getAll(),
-        isAdmin: true
+        isAdmin: true,
+        books: Book.getAll()
     });
 }
 
@@ -22,11 +22,19 @@ exports.getBooks = (req, res) => {
 exports.getBook = (req, res) => {
     const bookId = req.params.id;
     const book = Book.findBook(bookId);
-    res.render('admin/book', {
-        path: `/admin/${bookId}`,
-        isAdmin: true,
-        book
-    });
+    if (!book) {
+        res.render('404', {
+            path: '',
+            isAdmin: true
+        })
+    }
+    else {
+        res.render('admin/book', {
+            path: `/admin/${bookId}`,
+            isAdmin: true,
+            book
+        });      
+    }
 }
 
 // GET /admin/add-book
@@ -46,4 +54,11 @@ exports.postAddBook = (req, res) => {
     const book = new Book(name, imgUrl, describtion, price);
     book.save();
     res.redirect('/admin/books');
+}
+
+// DELETE /admin/del-book/:id
+exports.deleteBook = (req, res) => {
+    const bookId = req.params.id;
+    Book.delBook(bookId);
+    res.end();
 }

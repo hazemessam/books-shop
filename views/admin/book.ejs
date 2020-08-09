@@ -6,6 +6,7 @@
     <title><%= book.name %> </title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/book.css">
+    <link rel="icon" href="/img/icon.png">
 </head>
 <body>
     <%- include('../includes/header.ejs') %>
@@ -26,11 +27,13 @@
                 </h2>
                 <hr>
                 <div class="actions">
-                    <button>Add to cart</button>
+                    <a href="#">Edit</a>
+                    <button class="delete" id="<%= book.id %>">Delete</button>
                 </div>
             </div>
         </div>
     </main>
+    <footer>Made with <span>&#10084;</span> by Hazem Essam.</footer>
     <script src="/js/main.min.js"></script>
 </body>
 </html>

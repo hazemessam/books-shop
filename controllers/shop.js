@@ -22,11 +22,19 @@ exports.getBooks = (req, res) => {
 exports.getBook = (req, res) => {
     const bookId = req.params.id;
     const book = Book.findBook(bookId);
-    res.render('shop/book', {
-        path: `/books/${bookId}`,
-        isAdmin: false,
-        book
-    });
+    if (!book) {
+        res.render('404', {
+            path: '',
+            isAdmin: true
+        })
+    }
+    else {
+        res.render('admin/book', {
+            path: `/admin/${bookId}`,
+            isAdmin: true,
+            book
+        });      
+    }
 }
 
 // GET /cart
