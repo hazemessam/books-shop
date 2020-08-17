@@ -39,10 +39,8 @@ class Book {
 
     static findBook(bookId) {
         const books = getBooks();
-        for (let book of books)
-            if (book.id === bookId)
-                return book;
-        return null;
+        const book = books.find(book => book.id === bookId);
+        return book;
     }
 
     static delBook(bookId) {
