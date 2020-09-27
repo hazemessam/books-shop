@@ -66,16 +66,6 @@ main {
                             background-color: transparent;
                         }
                     }
-                    
-                    &.add-to-cart {
-                        background-color: $good-color;
-                        border-color: $good-color;
-                        
-                        &:hover {
-                            color: $good-color;
-                            background-color: transparent;
-                        }
-                    }
                 }
             }
         }

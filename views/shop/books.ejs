@@ -27,10 +27,11 @@
                         <img src="<%= book.imgUrl %>" loading="lazy" alt="book">
                     </div>
                     <h3><%= book.price %>$</h3>
-                    <div class="actions">
+                    <form class="actions" action="/cart" method="post">
                         <a href="/books/<%= book.id %>">Details</a>
-                        <button class="add-to-cart" id="<%= book.id %>">Add to cart</button>
-                    </div>
+                        <button type="submit" class="add-to-cart">Add to cart</button>
+                        <input type="hidden" name="id" value="<%= book.id %>"></input>
+                    </form>
                 </article>
             <% } %> 
         <% } else { %>

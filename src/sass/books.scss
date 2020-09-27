@@ -78,16 +78,6 @@ main {
                         background-color: $danger-color;
                     }
                 }
-
-                &.add-to-cart {
-                    color: $good-color;
-                    border-color: $good-color;
-                    
-                    &:hover {
-                        color: #fff;
-                        background-color: $good-color;
-                    }
-                }
             }
         }
     }

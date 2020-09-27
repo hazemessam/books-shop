@@ -1,4 +1,5 @@
 const Book = require('../models/book');
+const Cart = require('../models/cart');
 
 
 // GET /
@@ -24,14 +25,14 @@ exports.getBook = (req, res) => {
     const book = Book.findBook(bookId);
     if (!book) {
         res.render('404', {
-            path: '',
-            isAdmin: true
+            path: null,
+            isAdmin: false
         })
     }
     else {
         res.render('shop/book', {
-            path: `/admin/${bookId}`,
-            isAdmin: true,
+            path: null,
+            isAdmin: false,
             book
         });      
     }
@@ -43,4 +44,12 @@ exports.getCart = (req, res) => {
         path: '/cart',
         isAdmin: false
     });
+}
+
+// POST /cart
+exports.postCart = (req, res) => {
+    const bookId = req.body.id;
+    console.log(bookId);
+    Cart.addBook(bookId);
+    res.redirect('/cart');
 }

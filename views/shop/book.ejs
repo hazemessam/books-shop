@@ -26,9 +26,10 @@
                     <span>Price: </span><%= book.price %>$
                 </h2>
                 <hr>
-                <div class="actions">
-                    <button class="add-to-cart" id="<%= book.id %>">Add to cart</button>
-                </div>
+                <form class="actions" action="/cart" method="post">
+                    <button type="submit" class="add-to-cart">Add to cart</button>
+                    <input type="hidden" name="id" value="<%= book.id %>"></input>
+                </form>
             </div>
         </div>
     </main>

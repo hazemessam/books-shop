@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <link rel="stylesheet" href="/css/books.css">
     <link rel="icon" href="img/icon.png">
 </head>
 <body>
     <%- include('../includes/header.ejs') %> 
-    <main class="center">
-        <h1>Welcome to cart.</h1>
+    <main>
+        <div class="loader">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <h1 style="padding-top: 260px">Cart is empty!</h1>
     </main>
+    <!-- <footer>Made with <span>&#10084;</span> by Hazem Essam.</footer> -->
+    <button class="to-top" onclick="goToTop()" ><span>&#x21ea;</span></button>
     <script src="/js/main.min.js"></script>
 </body>
 </html>

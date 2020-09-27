@@ -24,12 +24,12 @@ exports.getBook = (req, res) => {
     const book = Book.findBook(bookId);
     if (!book)
         res.render('404', {
-            path: '',
+            path: null,
             isAdmin: true
         });
     else
         res.render('admin/book', {
-            path: `/admin/${bookId}`,
+            path: null,
             isAdmin: true,
             book
         });      

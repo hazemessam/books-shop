@@ -11,4 +11,6 @@ router.get('/books/:id', shopController.getBook);
 
 router.get('/cart', shopController.getCart);
 
+router.post('/cart', shopController.postCart);
+
 module.exports = router;
